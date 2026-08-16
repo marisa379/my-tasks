@@ -1,0 +1,20 @@
+{
+  "name": "crypto-ws-app",
+  "version": "1.0.0",
+  "description": "WebSocket клиент-серверное приложение для отображения котировок криптовалют в реальном времени",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+     "websocket",
+     "crypto",
+     "binance",
+     "realtime"],
+  "author": "Наталья",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ws": "^8.21.3"
+  }
+}
