@@ -1,0 +1,214 @@
+/* Общие стили для всего приложения */
+.App {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.App:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 2.2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Стили для формы ввода */
+.task-input-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 35px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.task-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 20px;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: white;
+  max-width: 400px;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  transform: scale(1.02);
+}
+
+.task-input::placeholder {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+.add-btn {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+  background: linear-gradient(135deg, #357abd, #2a6bb5);
+}
+
+.add-btn:active {
+  transform: translateY(0px);
+}
+
+/* Стили для списка задач */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Стили для отдельной задачи */
+.task-item {
+  background: white;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border-left: 4px solid #4a90e2;
+}
+
+.task-item:hover {
+  transform: translateX(8px) scale(1.01);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left-color: #e74c3c;
+}
+
+.task-text {
+  font-size: 16px;
+  color: #2c3e50;
+  font-weight: 500;
+  word-break: break-word;
+  text-align: left;
+  flex: 1;
+  margin-right: 15px;
+}
+
+/* Стили для кнопки удаления */
+.delete-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 80px;
+  box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+}
+
+.delete-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+  background: linear-gradient(135deg, #c0392b, #a93226);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* Сообщение, когда задач нет */
+.empty-message {
+  color: #6c757d;
+  font-style: italic;
+  padding: 30px;
+  font-size: 1.1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 2px dashed #dee2e6;
+}
+
+/* Анимация появления задач */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-item {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+  .App {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .task-input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-input {
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .task-text {
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .delete-btn {
+    width: 100%;
+  }
+}
