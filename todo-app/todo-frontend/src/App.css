@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.app {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.task-input button {
+  padding: 10px 20px;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.task-input button:hover {
+  background: #2980b9;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-title {
+  flex: 1;
+  font-size: 16px;
+}
+
+.task-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}
+
+.error {
+  background: #ffe0e0;
+  color: #c0392b;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+}
